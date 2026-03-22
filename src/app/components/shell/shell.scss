@@ -1,0 +1,26 @@
+.shell {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+    background: linear-gradient(rgb(255, 255, 255), rgb(245, 242, 242), rgb(250, 250, 250));
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+app-header {
+    height: 11%;
+}
+
+app-content {
+    height: 89%;
+}

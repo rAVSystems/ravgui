@@ -1,0 +1,10 @@
+<div class="container">
+    <img class="logo" src="/assets/harvard_shield_logo.svg" alt="Logo Image">
+    <div class="icon">{{stateService.theme().logoUrl}}</div>
+    <div class="datetime">{{DateTime$() | date:'shortTime'}}</div>
+    <div class="spacer"></div>
+    <div class="roomname">{{stateService.room().roomName}}</div>
+    <button class="power-btn" ButtonId="power">
+        <i class="ph-bold ph-power"></i>
+    </button>
+</div>

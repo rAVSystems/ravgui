@@ -1,0 +1,55 @@
+<div class="container">
+
+    <span class="title">Camera</span>
+
+    <div class="camera-select">
+        <span class="section-label">Modes</span>
+        <button class="autotrack-btn" [class.active]="autotrack()" ButtonId="autotrack" (click)="toggleAutotrack()">
+            <span class="material-symbols-outlined">frame_person</span>
+            <span class="cam-label">Autotrack</span>
+        </button>
+        <button class="autotrack-btn" [class.active]="privacy()" ButtonId="privacy" (click)="togglePrivacy()">
+            <span class="material-symbols-outlined">videocam_off</span>
+            <span class="cam-label">Privacy</span>
+        </button>
+
+        <span class="section-label">Cameras</span>
+
+        <button class="cam-btn" [class.active]="activeCamera() === 'cam1'" ButtonId="cam1" (click)="selectCamera('cam1')">
+            <span class="cam-label">Rear 1</span>
+        </button>
+        <button class="cam-btn" [class.active]="activeCamera() === 'cam2'" ButtonId="cam2" (click)="selectCamera('cam2')">
+            <span class="cam-label">Rear 2</span>
+        </button>
+        <button class="cam-btn" [class.active]="activeCamera() === 'cam3'" ButtonId="cam3" (click)="selectCamera('cam3')">
+            <span class="cam-label">Front</span>
+        </button>
+        <button class="cam-btn" [class.active]="activeCamera() === 'cam4'" ButtonId="cam4" (click)="selectCamera('cam4')">
+            <span class="cam-label">Whiteboard</span>
+        </button>
+    </div>
+
+    <div class="main">
+        <div class="stream-window">
+            <div class="stream-placeholder">
+                <span class="material-symbols-outlined stream-icon">videocam</span>
+                <span class="stream-label">RTSP Stream</span>
+            </div>
+        </div>
+
+        <div class="preset-bar">
+            <button class="preset-btn" [class.active]="activePreset() === 'preset-wide'" ButtonId="preset-wide" (click)="selectPreset('preset-wide')">Wide</button>
+            <button class="preset-btn" [class.active]="activePreset() === 'preset-narrow'" ButtonId="preset-narrow" (click)="selectPreset('preset-narrow')">Narrow</button>
+            <button class="preset-btn" [class.active]="activePreset() === 'preset2'" ButtonId="preset2" (click)="selectPreset('preset2')">Preset 2</button>
+            <button class="preset-btn" [class.active]="activePreset() === 'preset3'" ButtonId="preset3" (click)="selectPreset('preset3')">Preset 3</button>
+            <button class="preset-btn" [class.active]="activePreset() === 'preset4'" ButtonId="preset4" (click)="selectPreset('preset4')">Preset 4</button>
+            <button class="preset-btn" [class.active]="activePreset() === 'preset5'" ButtonId="preset5" (click)="selectPreset('preset5')">Preset 5</button>
+            <button class="preset-btn" [class.active]="activePreset() === 'preset6'" ButtonId="preset6" (click)="selectPreset('preset6')">Preset 6</button>
+        </div>
+    </div>
+
+    <button class="back-btn" ButtonId="back" (click)="goBack()">
+        <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+
+</div>

@@ -1,0 +1,88 @@
+.container{
+    display:flex;
+    flex-direction:row;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    align-items: center;
+    //background-color: blue;
+}
+
+.spacer{
+    flex-grow: 1;
+}
+
+.buttonbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;;
+    align-items: center;
+    border-radius: 3.5vh;
+    margin-right: 3.5vh;
+    margin-left: 3.5vh;
+    padding-left: 2.3vh;
+    padding-right: 4.5vh;
+    //background-color: yellow;
+}
+
+.sourcebar{
+  display:flex;
+  height:100%;
+  padding-right: 1.7vh;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  //background-color: green;
+}
+
+.back-navigation{
+  display: flex;
+  height: 100%;
+}
+
+.backbutton{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3.5vh;
+  margin: 3.5vh;
+}
+
+.volume{
+    height: 100%;
+    width: 45vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.mutebutton{
+    display: flex;
+    height: 100%;
+    margin-right: 3.5vh;
+}
+
+.icon{
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  transform: scale(3);
+}
+
+@keyframes press-animate {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+.pressed{
+    animation: press-animate 300ms ease-out;
+}

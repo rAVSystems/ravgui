@@ -1,0 +1,73 @@
+<div class="container">
+
+    <span class="title">Audio</span>
+
+    <div class="channels">
+
+        <div class="channel">
+            <span class="channel-label">Podium</span>
+            <div class="slider-wrap">
+                <app-slider [vertical]="true"></app-slider>
+            </div>
+            <button class="mute-btn" [class.muted]="muted.podium()" ButtonId="mute-podium" (click)="toggleMute('podium')">
+                <span class="material-symbols-outlined">mic_off</span>
+            </button>
+        </div>
+
+        <div class="channel">
+            <span class="channel-label">Lav 1</span>
+            <div class="slider-wrap">
+                <app-slider [vertical]="true"></app-slider>
+            </div>
+            <button class="mute-btn" [class.muted]="muted.lav1()" ButtonId="mute-lav1" (click)="toggleMute('lav1')">
+                <span class="material-symbols-outlined">mic_off</span>
+            </button>
+        </div>
+
+        <div class="channel">
+            <span class="channel-label">Lav 2</span>
+            <div class="slider-wrap">
+                <app-slider [vertical]="true"></app-slider>
+            </div>
+            <button class="mute-btn" [class.muted]="muted.lav2()" ButtonId="mute-lav2" (click)="toggleMute('lav2')">
+                <span class="material-symbols-outlined">mic_off</span>
+            </button>
+        </div>
+
+        <div class="channel">
+            <span class="channel-label">HH 1</span>
+            <div class="slider-wrap">
+                <app-slider [vertical]="true"></app-slider>
+            </div>
+            <button class="mute-btn" [class.muted]="muted.handheld1()" ButtonId="mute-handheld1" (click)="toggleMute('handheld1')">
+                <span class="material-symbols-outlined">mic_off</span>
+            </button>
+        </div>
+
+        <div class="channel">
+            <span class="channel-label">HH 2</span>
+            <div class="slider-wrap">
+                <app-slider [vertical]="true"></app-slider>
+            </div>
+            <button class="mute-btn" [class.muted]="muted.handheld2()" ButtonId="mute-handheld2" (click)="toggleMute('handheld2')">
+                <span class="material-symbols-outlined">mic_off</span>
+            </button>
+        </div>
+
+        <div class="channel">
+            <span class="channel-label">Program</span>
+            <div class="slider-wrap">
+                <app-slider [vertical]="true"></app-slider>
+            </div>
+            <button class="mute-btn" [class.muted]="muted.program()" ButtonId="mute-program" (click)="toggleMute('program')">
+                <span class="material-symbols-outlined">volume_off</span>
+            </button>
+        </div>
+
+    </div>
+
+    <button class="back-btn" ButtonId="back" (click)="goBack()">
+        <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+
+</div>

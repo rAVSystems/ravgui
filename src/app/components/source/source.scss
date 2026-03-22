@@ -1,0 +1,79 @@
+.container{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 26vh;
+    width: 22vh;
+    margin: 1.7vh;
+    padding-left:0px;
+    padding-right:0px;
+    border: 0px solid rgba(0, 0, 0, 0);
+    border-radius: 2.5vh;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0.2vh 0.7vh rgba(0, 0, 0, 0.3);
+}
+
+.icon{
+    display: flex;
+    //height:75%;
+    margin-top: 0.6vh;
+    font-size: 17vh;
+    //color: #000000;
+    /* Gradient background: light gray (top) to black (bottom) */
+    background: rgb(0, 0, 0);
+
+    /* Clip the background to the text */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* Make the text itself transparent so the gradient shows */
+    -webkit-text-fill-color: transparent;
+    color: transparent; /* fallback */
+}
+
+.material-symbols-outlined{
+    transform: scale(4);
+}
+
+.label{
+    display: flex;
+    color:rgb(0, 0, 0);
+    font-size: 4.2vh;
+    width: 15vh;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.1;
+    font-weight: 500;
+    font-style: normal;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.selected{
+    //background: linear-gradient(rgb(48, 48, 48), rgb(39, 39, 39),rgb(29, 29, 29), rgb(0, 0, 0));
+    //background: linear-gradient(rgb(53, 116, 193), rgb(0, 82, 159), rgb(0, 44, 121)); //UNH
+    //background: linear-gradient(rgb(18, 122, 82), rgb(14, 96, 64), rgb(6, 42, 28));
+    text-shadow: 0px 0px 3px black;
+    //border-top: 6px solid rgb(255, 255, 255);
+}
+
+:host(.pressed) .container {
+    animation: grow-shrink 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes grow-shrink {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.detected{
+    height: 1.7vh;
+    width: 1.7vh;
+    background-color:greenyellow;
+    border-radius:100%;
+    margin-right: 5px;
+    box-shadow: 0px 0px 2px black;
+}

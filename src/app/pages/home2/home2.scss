@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    //background-color: green;
+  }
+
+  .sourcebar {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: 45%;
+    width: 100%;
+    align-items: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    //background-color: blue;
+    justify-content: center;
+  }
+
+  .container::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
+  .app-source.pressed {
+animation: grow-shrink 300ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes grow-shrink {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.17); }
+    100% { transform: scale(1); }
+}

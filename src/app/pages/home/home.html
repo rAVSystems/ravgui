@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="left-menu-bar"></div>
+    <div class="left-btns">
+        <app-button icon="microphone" buttonId="mic" (click)="goToAudio()"></app-button>
+        <app-button icon="video-camera" buttonId="camera" (click)="goToCamera()"></app-button>
+        <app-button buttonId="settings" (click)="goToSettings()"></app-button>
+    </div>
+    <div class="h-slider-wrap">
+        <button class="mute-btn" [class.muted]="masterMuted()" ButtonId="mute-master" (click)="toggleMasterMute()">
+            <span class="material-symbols-outlined">volume_off</span>
+        </button>
+        <app-slider [vertical]="false"></app-slider>
+    </div>
+    <div class="sourcebar">
+        @for (source of sources(); track source.id) {
+            <app-source
+                [id]="source.id"
+                [icon]="source.icon"
+                [label]="source.label"
+                [selected]="source.isSelected"
+                [ButtonId]="source.id">
+            </app-source>
+        }
+    </div>
+    <div class="right-menu-bar"></div>
+</div>

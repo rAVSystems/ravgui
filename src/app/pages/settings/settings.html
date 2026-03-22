@@ -1,0 +1,68 @@
+<div class="container">
+
+    @if (!unlocked()) {
+        <span class="title">Settings</span>
+
+        <div class="pin-wrap">
+            <div class="pin-dots" [class.shake]="shake()">
+                @for (i of [0,1,2,3]; track i) {
+                    <div class="dot" [class.filled]="entry().length > i"></div>
+                }
+            </div>
+
+            <div class="keypad">
+                @for (key of ['1','2','3','4','5','6','7','8','9','','0','⌫']; track key) {
+                    @if (key === '') {
+                        <div class="key-empty"></div>
+                    } @else if (key === '⌫') {
+                        <button class="key key-clear" ButtonId="key-clear" (click)="clear()">⌫</button>
+                    } @else {
+                        <button class="key" [ButtonId]="'key-' + key" (click)="press(key)">{{ key }}</button>
+                    }
+                }
+            </div>
+        </div>
+    } @else {
+        <button class="exit-btn" ButtonId="exit-advanced" (click)="exitAdvanced()">Exit Advanced Mode</button>
+
+        <div class="settings-grid">
+            <div class="setting-card">
+                <span class="setting-label">System Name</span>
+                <span class="setting-value">Main Conference Room</span>
+            </div>
+            <div class="setting-card">
+                <span class="setting-label">Firmware Version</span>
+                <span class="setting-value">v3.4.1</span>
+            </div>
+            <div class="setting-card">
+                <span class="setting-label">Q-SYS Core</span>
+                <span class="setting-value">Core 110f — 192.168.1.100</span>
+            </div>
+            <div class="setting-card">
+                <span class="setting-label">Display Resolution</span>
+                <span class="setting-value">1920 × 1080 @ 60Hz</span>
+            </div>
+            <div class="setting-card">
+                <span class="setting-label">Touch Panel Model</span>
+                <span class="setting-value">TSW-1070</span>
+            </div>
+            <div class="setting-card">
+                <span class="setting-label">Uptime</span>
+                <span class="setting-value">14 days, 6 hrs</span>
+            </div>
+            <div class="setting-card">
+                <span class="setting-label">Audio DSP Status</span>
+                <span class="setting-value">Online</span>
+            </div>
+            <div class="setting-card">
+                <span class="setting-label">Network</span>
+                <span class="setting-value">VLAN 20 — 1Gbps</span>
+            </div>
+        </div>
+    }
+
+    <button class="back-btn" ButtonId="back" (click)="goBack()">
+        <span class="material-symbols-outlined">arrow_back</span>
+    </button>
+
+</div>
