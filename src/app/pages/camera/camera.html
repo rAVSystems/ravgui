@@ -31,20 +31,16 @@
 
     <div class="main">
         <div class="stream-window">
-            <div class="stream-placeholder">
-                <span class="material-symbols-outlined stream-icon">videocam</span>
-                <span class="stream-label">RTSP Stream</span>
-            </div>
+            <video #videoEl autoplay playsinline muted></video>
         </div>
 
         <div class="preset-bar">
             <button class="preset-btn" [class.active]="activePreset() === 'preset-wide'" ButtonId="preset-wide" (click)="selectPreset('preset-wide')">Wide</button>
             <button class="preset-btn" [class.active]="activePreset() === 'preset-narrow'" ButtonId="preset-narrow" (click)="selectPreset('preset-narrow')">Narrow</button>
-            <button class="preset-btn" [class.active]="activePreset() === 'preset2'" ButtonId="preset2" (click)="selectPreset('preset2')">Preset 2</button>
-            <button class="preset-btn" [class.active]="activePreset() === 'preset3'" ButtonId="preset3" (click)="selectPreset('preset3')">Preset 3</button>
-            <button class="preset-btn" [class.active]="activePreset() === 'preset4'" ButtonId="preset4" (click)="selectPreset('preset4')">Preset 4</button>
-            <button class="preset-btn" [class.active]="activePreset() === 'preset5'" ButtonId="preset5" (click)="selectPreset('preset5')">Preset 5</button>
-            <button class="preset-btn" [class.active]="activePreset() === 'preset6'" ButtonId="preset6" (click)="selectPreset('preset6')">Preset 6</button>
+            <button class="preset-btn" [class.active]="activePreset() === 'preset2'" ButtonId="preset2" (click)="selectPreset('preset2')">Custom 1</button>
+            <button class="preset-btn" [class.active]="activePreset() === 'preset3'" ButtonId="preset3" (click)="selectPreset('preset3')">Custom 2</button>
+            <button class="preset-btn" [class.active]="activePreset() === 'preset4'" ButtonId="preset4" (click)="selectPreset('preset4')">Custom 3</button>
+            <button class="preset-btn" [class.active]="activePreset() === 'preset5'" ButtonId="preset5" (click)="selectPreset('preset5')">Custom 4</button>
         </div>
     </div>
 
