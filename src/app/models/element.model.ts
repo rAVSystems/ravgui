@@ -1,3 +1,5 @@
+import { ActionModel } from './action.model';
+
 export interface ElementModel {
     id: string;
     component: string;
@@ -12,4 +14,6 @@ export interface ElementModel {
     description: string;
     isSelected: boolean;
     isDetected: boolean;
+    actions: ActionModel[];
+    holdActions: ActionModel[];
 }

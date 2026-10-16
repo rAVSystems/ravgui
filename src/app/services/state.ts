@@ -4,6 +4,7 @@ import { AudioModel } from '../models/audio.model';
 import { DeviceModel } from '../models/device.model';
 import { ThemeModel } from '../models/theme.model';
 import { ElementModel } from '../models/element.model';
+import { ActionModel } from '../models/action.model';
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +30,9 @@ export class State {
       activeColor: "white",
       description: "HDMI Laptop Source",
       isSelected: false,
-      isDetected: false
+      isDetected: false,
+      actions: [] as ActionModel[],
+      holdActions: [] as ActionModel[]
     },{
       id: "source2",
       component: "sourcebar",
@@ -43,7 +46,9 @@ export class State {
       activeColor: "white",
       description: "Built-in PC",
       isSelected: false,
-      isDetected: false
+      isDetected: false,
+      actions: [],
+      holdActions: []
     },{
       id: "source3",
       component: "sourcebar",
@@ -57,7 +62,9 @@ export class State {
       activeColor: "white",
       description: "HDMI Laptop Source",
       isSelected: false,
-      isDetected: false
+      isDetected: false,
+      actions: [],
+      holdActions: []
     },{
       id: "source4",
       component: "sourcebar",
@@ -71,7 +78,9 @@ export class State {
       activeColor: "white",
       description: "Built-in PC",
       isSelected: false,
-      isDetected: false
+      isDetected: false,
+      actions: [],
+      holdActions: []
     }
   ]);
   devices: Signal<DeviceModel[]> = signal([]);

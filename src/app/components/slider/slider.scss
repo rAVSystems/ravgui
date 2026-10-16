@@ -26,6 +26,18 @@
         }
     }
 
+    .noUi-base,
+    .noUi-origin {
+        overflow: visible !important;
+    }
+
+    .noUi-handle {
+        -webkit-backface-visibility: visible !important;
+        backface-visibility: visible !important;
+        transform-style: flat !important;
+        will-change: transform;
+    }
+
     .noUi-vertical .noUi-handle {
         right: calc(-2.5vh + 9px);
     }

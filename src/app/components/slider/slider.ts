@@ -56,7 +56,10 @@ export class SliderComponent implements AfterViewInit, OnDestroy {
     });
 
     this.slider.on('start', () => {
-      if (this.hideTagTimeout) clearTimeout(this.hideTagTimeout);
+      if (this.hideTagTimeout) {
+        clearTimeout(this.hideTagTimeout);
+        this.hideTagTimeout = null;
+      }
       if (this.tagEl) this.tagEl.classList.add('noui-tag-visible');
     });
 
@@ -65,13 +68,16 @@ export class SliderComponent implements AfterViewInit, OnDestroy {
       if (this.hideTagTimeout) clearTimeout(this.hideTagTimeout);
       this.hideTagTimeout = setTimeout(() => {
         if (this.tagEl) this.tagEl.classList.remove('noui-tag-visible');
-      }, 1000);
+        this.hideTagTimeout = null;
+      }, 1500);
     });
 
     this.slider.on('end', () => {
+      if (this.hideTagTimeout) clearTimeout(this.hideTagTimeout);
       this.hideTagTimeout = setTimeout(() => {
         if (this.tagEl) this.tagEl.classList.remove('noui-tag-visible');
-      }, 1000);
+        this.hideTagTimeout = null;
+      }, 1500);
     });
   }
 
